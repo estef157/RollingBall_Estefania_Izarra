@@ -29,7 +29,7 @@ public class Protagonista : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(new Vector3 (h, 0, v).normalized * fuerzaMov, ForceMode.Force);
-        rb.velocity += new Vector3(0, -9.81f * 4, 0);
+        rb.velocity += new Vector3(0, -9.81f, 0);
     }
     private void Saltar()
     {

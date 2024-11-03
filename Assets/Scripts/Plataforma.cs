@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Plataforma : MonoBehaviour
 {
-    [SerializeField] int velocidadPlat = 0;
-    [SerializeField]Vector3 direccionPlat = new Vector3(0, 0, 4);
+    [SerializeField] int velocidad;
+    [SerializeField] Vector3 direccionPlat;
     Vector3 rotacionPlat = new Vector3(10, 0, 0);
-    float timer = 0;
+    float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,12 @@ public class Plataforma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direccionPlat.normalized * velocidadPlat * Time.deltaTime);
-
+        transform.Translate(direccionPlat.normalized * velocidad * Time.deltaTime);
+        timer += Time.deltaTime;
         if (timer >= 3)
         {
-            transform.Rotate(rotacionPlat * Time.deltaTime);
+            direccionPlat *= -1;
+            timer = 0;
         }
        
 
