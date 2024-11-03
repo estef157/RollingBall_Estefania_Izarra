@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Protagonista : MonoBehaviour
 {
-  //  Vector3 direccion = new Vector3(0, 0, 0);
+  
       
-    [SerializeField] int fuerza = 0;
+    [SerializeField] int fuerzaMov = 0;
+    [SerializeField] int fuerzaSalto = 0;
      Rigidbody rb;
+    private float v, h;
 
     // Start is called before the first frame update
     void Start()
@@ -19,28 +21,24 @@ public class Protagonista : MonoBehaviour
     void Update()
     {
 
-        float v = Input.GetAxisRaw("Vertical");
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
+        Vector3 direccion  = new Vector3 (h,v,0).normalized;
+    }
+
+    private void FixedUpdate()
+    {
+        rb.AddForce(new Vector3 (h, 0, v).normalized * fuerzaMov, ForceMode.Force);
+        rb.velocity += new Vector3(0, -9.81f * 4, 0);
+    }
+    private void Saltar()
+    {
         Vector3 salto = new Vector3(0, v, 0);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(salto * fuerza, ForceMode.Impulse);
+            rb.AddForce(salto * fuerzaSalto, ForceMode.Impulse);
         }
-       
-
-
-
-
-
-
-
-       // float h = Input.GetAxisRaw("Horizontal");
-      //  float v = Input.GetAxisRaw("Vertical");
-
-       // transform.Translate(new Vector3 (h, v));
-            
-
-
-
     }
+
 }
