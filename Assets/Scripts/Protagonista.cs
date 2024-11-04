@@ -24,6 +24,7 @@ public class Protagonista : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         Vector3 direccion  = new Vector3 (h,v,0).normalized;
+        Saltar();
     }
 
     private void FixedUpdate()
@@ -33,11 +34,11 @@ public class Protagonista : MonoBehaviour
     }
     private void Saltar()
     {
-        Vector3 salto = new Vector3(0, v, 0);
+        //Vector3 salto = new Vector3(0, v, 0);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(salto * fuerzaSalto, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
     }
 
