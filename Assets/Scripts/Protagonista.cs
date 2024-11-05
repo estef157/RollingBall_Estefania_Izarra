@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Protagonista : MonoBehaviour
 {
-  
-      
-    [SerializeField] int fuerzaMov = 0;
-    [SerializeField] int fuerzaSalto = 0;
-     Rigidbody rb;
+
+
+    [SerializeField] int fuerzaMov;
+    [SerializeField] int fuerzaSalto;
+    [SerializeField] float distanciaDeteccionSuelo;
+    [SerializeField] LayerMask queEsSuelo;
+    Rigidbody rb;
     private float v, h;
 
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class Protagonista : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(new Vector3 (h, 0, v).normalized * fuerzaMov, ForceMode.Force);
-        rb.velocity += new Vector3(0, -9.81f, 0);
+        rb.velocity += new Vector3(0, -10f, 0);
     }
     private void Saltar()
     {
@@ -38,8 +40,15 @@ public class Protagonista : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+            if (DetectarSuelo() == true)
+            {
+                rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+            }
         }
     }
-
+    bool DetectarSuelo()
+    {
+       bool resultado = Physics.Raycast(transform.position, new Vector3(0, -1, 0), distanciaDeteccionSuelo, queEsSuelo);
+        return resultado;
+    }
 }
