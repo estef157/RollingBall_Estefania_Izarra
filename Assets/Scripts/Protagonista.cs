@@ -32,19 +32,23 @@ public class Protagonista : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(new Vector3 (h, 0, v).normalized * fuerzaMov, ForceMode.Force);
-        rb.AddForce(new Vector3(h, 0, v).normalized * fuerzaMov, ForceMode.Impulse);
-        rb.velocity += new Vector3(0, -10f, 0);
+        //rb.AddForce(new Vector3(h, 0, v).normalized * fuerzaMov, ForceMode.Impulse);
+        //rb.velocity += new Vector3(0, -10f, 0);
     }
     private void Saltar()
     {
         Vector3 salto = new Vector3(0, v, 0);
 
         if (Input.GetKeyDown(KeyCode.Space))
-        
+        {
            if (DetectarSuelo() == true)
            {
+                Debug.Log("dsfdsfdsfds");
                rb.AddForce(Vector3.up.normalized * fuerzaSalto, ForceMode.Impulse);
            }
+
+        }
+        
     }
        
             

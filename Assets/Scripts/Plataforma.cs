@@ -20,7 +20,7 @@ public class Plataforma : MonoBehaviour
     {
         transform.Translate(direccionPlat.normalized * velocidad * Time.deltaTime);
         timer += Time.deltaTime;
-        if (timer >= 3)
+        if (timer >= 1)
         {
             direccionPlat *= -1;
             timer = 0;
