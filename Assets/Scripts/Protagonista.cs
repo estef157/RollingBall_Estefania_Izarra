@@ -6,7 +6,7 @@ public class Protagonista : MonoBehaviour
 {
 
 
-    [SerializeField] int fuerzaMov;
+    [SerializeField] static public int fuerzaMov;
     [SerializeField] int fuerzaSalto;
     [SerializeField] float distanciaDeteccionSuelo;
     [SerializeField] LayerMask queEsSuelo;
