@@ -19,10 +19,7 @@ public class CambiaCamaras : MonoBehaviour
             cam1.SetActive(false);
             cam2.SetActive(true);
         }
-        else
-        {
-           cam1.SetActive (true);
-        }
+        
     }
 
 
