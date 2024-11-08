@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Rodillo : MonoBehaviour
 {
-    [SerializeField] Vector3 direccionR;    
+    [SerializeField] Vector3 rotacion;
+    [SerializeField] float fuerza;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().AddTorque(direccionR * 50000, ForceMode.VelocityChange); //pide un vector 3
+        rb =GetComponent<Rigidbody>();
+        rb.AddTorque(rotacion * fuerza, ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
