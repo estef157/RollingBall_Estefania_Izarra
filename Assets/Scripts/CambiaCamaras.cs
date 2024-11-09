@@ -6,6 +6,7 @@ public class CambiaCamaras : MonoBehaviour
 {
     [SerializeField] private GameObject cam1;
     [SerializeField] private GameObject cam2;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class CambiaCamaras : MonoBehaviour
         {
             cam1.SetActive(false);
             cam2.SetActive(true);
+            
         }
         
     }
