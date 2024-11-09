@@ -62,6 +62,13 @@ public class Protagonista : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.gameObject.CompareTag("Coleccionable"))
+        {
+            Destroy(other.gameObject);
+        }
+
+
         if(other.gameObject.CompareTag("Respawn"))
         {
             rb =gameObject.GetComponent<Rigidbody>();
