@@ -5,9 +5,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource sfx;
-    // Start is called before the first frame update
-    void  ReproducirSonido(AudioClip cancion)
+    
+    public void  ReproducirSonido(AudioClip clip)
     {
-        sfx.PlayOneShot(cancion);
+        
+        sfx.PlayOneShot(clip);
     }
+
+    
 }

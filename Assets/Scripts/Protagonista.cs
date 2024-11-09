@@ -5,7 +5,8 @@ using UnityEngine;
 public class Protagonista : MonoBehaviour
 {
 
-
+    [SerializeField] AudioClip sonidoMoneda;
+    [SerializeField] AudioManager manager;
     static public int fuerzaMov = 4;
     [SerializeField] int fuerzaSalto;
     [SerializeField] float distanciaDeteccionSuelo;
@@ -65,6 +66,7 @@ public class Protagonista : MonoBehaviour
 
         if (other.gameObject.CompareTag("Coleccionable"))
         {
+            manager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
         }
 
