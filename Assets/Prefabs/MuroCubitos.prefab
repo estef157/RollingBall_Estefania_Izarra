@@ -2138,6 +2138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 580110498482874111}
   - component: {fileID: -1364226128617506819}
+  - component: {fileID: -825975262118620841}
   m_Layer: 0
   m_Name: MuroCubitos
   m_TagString: Untagged
@@ -2232,6 +2233,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cf6bf3079dc724a90ed170fb4c4b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbodies:
+  - {fileID: 1952333667505000997}
+  - {fileID: 7214740414346003242}
+  - {fileID: 7590948924309438477}
+  - {fileID: 533002611046815044}
+  - {fileID: 6029750252801027201}
+  - {fileID: 3528787209580887823}
+  - {fileID: 5616124877299186293}
+  - {fileID: 7619139044987622012}
+  - {fileID: 3289341664599609022}
+  - {fileID: 1398751801000430124}
+  - {fileID: 7835981391827773615}
+  - {fileID: 6676549191058530094}
+  - {fileID: 8589739478864533232}
+  - {fileID: 1270494147007389565}
+  - {fileID: 3497554932252303321}
+  - {fileID: 2183876124894669578}
+  - {fileID: 5381952285294418833}
+  - {fileID: 7750153910808088201}
+  - {fileID: 3162763248081307254}
+  - {fileID: 8281750499878205986}
+  - {fileID: 4081014192656708522}
+  - {fileID: 4619450856754890174}
+  - {fileID: 7037621885470397064}
+  - {fileID: 6939702823633100814}
+  - {fileID: 6689169671881267904}
+  - {fileID: 805538195598510321}
+  - {fileID: 8531426345749824247}
+  - {fileID: 7324657448392075909}
+  - {fileID: 2680492231491840838}
+  - {fileID: 7564572710043400908}
+  - {fileID: 5956817143869121917}
+  - {fileID: 348717303986759452}
+  - {fileID: 3107663479926022493}
+  - {fileID: 5715826573871098182}
+  - {fileID: 7199114706241013976}
+  - {fileID: 265444228674912285}
+  - {fileID: 3972493581808477409}
+  - {fileID: 6149397979935990246}
+  - {fileID: 6992500095833556263}
+  - {fileID: 4471221639768525556}
+  - {fileID: 7756331946226208238}
+  - {fileID: 3561377589898852499}
+  - {fileID: 5310453843488206328}
+  - {fileID: 3490596717881564023}
+  - {fileID: 7119564685111614105}
+  - {fileID: 6192829565294073482}
+  - {fileID: 7177039357668974662}
+  - {fileID: 8045003748807901236}
+  - {fileID: 7301704897037649461}
+  - {fileID: 1945061478910741624}
+  - {fileID: 3435522456278257791}
+  - {fileID: 2778681460695880005}
+  - {fileID: 6754324084043828687}
+  - {fileID: 6014392096998710254}
+  - {fileID: 550530551421674417}
+  - {fileID: 4116634358224501636}
+  - {fileID: 6391356056180202400}
+  - {fileID: 4050095693237850786}
+  - {fileID: 302532586526230360}
+  - {fileID: 6871293334450052497}
+  tiempito: 0.4
+--- !u!65 &-825975262118620841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099190001560681609}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2187941391307877161
 GameObject:
   m_ObjectHideFlags: 0

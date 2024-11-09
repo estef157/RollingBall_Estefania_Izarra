@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MuroCubitos : MonoBehaviour
 {
     private float timer = 0f;
+    [SerializeField] Rigidbody[] rigidbodies;
+    [SerializeField] private float tiempito;
     private bool iniciarCuenta = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -22,6 +21,10 @@ public class MuroCubitos : MonoBehaviour
             if(timer>=2)
             {
                 Time.timeScale = 1f;
+                for (int i = 0; i < rigidbodies.Length; i++)
+                {
+                    rigidbodies[i].useGravity = true;
+                }
             }
         }
     }
@@ -30,8 +33,9 @@ public class MuroCubitos : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Time.timeScale = 0.2f;
+            Time.timeScale = tiempito;
             iniciarCuenta=true;
         }
     }
+
 }
