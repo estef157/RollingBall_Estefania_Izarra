@@ -7,9 +7,10 @@ public class PowerUoBoost : MonoBehaviour
 {
     [SerializeField] AudioClip sonidoBoost;
     [SerializeField] AudioManager manager;
-    [SerializeField]int velocidadRotBoost;
-    [SerializeField]Vector3 direccionRotBoost = new Vector3(0, 0, 0);
+    [SerializeField] Vector3 vectorMov;
+    [SerializeField] float velocidadmov;
     public int multiplicador = 1;
+    float timer = 0;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -22,7 +23,14 @@ public class PowerUoBoost : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(direccionRotBoost * velocidadRotBoost * Time.deltaTime);
+        timer += Time.deltaTime;
+        transform.Translate(vectorMov * velocidadmov * Time.deltaTime, Space.World);
+        if (timer >= 1f)
+        {
+            vectorMov = vectorMov * -1;
+            timer = 0;
+
+        }
 
     }
 }
