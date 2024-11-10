@@ -1,32 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
+    public static bool JuegaPausa = false;
     [SerializeField] GameObject pausa;
      // Start is called before the first frame update
-    void Start()
-    {
-        pausa.SetActive(false);
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
         {
-            pausa.SetActive (true);
-            Time.timeScale = 0;
+           if (JuegaPausa)
+            {
+                Resume();
+            }
+           else
+            {
+                Pause();
+            }
         }
-        else if(Input.GetKeyUp(KeyCode.Escape))
-        {
-            pausa.SetActive(false);
-        }
+        
     }
 
+    public void Resume()
+    {
+        pausa.SetActive(false);
+        Time.timeScale = 1f;
+        JuegaPausa = false;
+    }
+    public void Pause()
+    {
+        pausa.SetActive(true);
+        Time.timeScale = 0;
+        JuegaPausa = true;
+    }
 
     public void Restart()
     {
