@@ -7,6 +7,7 @@ public class Protagonista : MonoBehaviour
 {
     public static bool Time0ut = false;
     [SerializeField] AudioClip sonidoMoneda;
+    [SerializeField] Vector3 spawn;
     [SerializeField] AudioManager manager;
     static public int fuerzaMov = 4;
     [SerializeField] int fuerzaSalto;
@@ -86,9 +87,10 @@ public class Protagonista : MonoBehaviour
                 //Detener por el momento la bola
                 rb.velocity = Vector3.zero;
                 // Posicion inicial
-                rb.MovePosition(new Vector3(33.8f, 7, -29.7f));
+                rb.MovePosition(spawn);
                 rb.useGravity = true; //reactivar
             }
+            
         }
     }
 }
