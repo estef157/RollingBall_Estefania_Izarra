@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,8 @@ public class Protagonista : MonoBehaviour
     [SerializeField] int fuerzaSalto;
     [SerializeField] float distanciaDeteccionSuelo;
     [SerializeField] LayerMask queEsSuelo;
+    private int puntuacion;
+    [SerializeField] TMP_Text textoPuntos;
     Rigidbody rb;
     private float v, h;
 
@@ -72,8 +75,11 @@ public class Protagonista : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+
         if (other.gameObject.CompareTag("Coleccionable"))
         {
+            puntuacion += 1;
+            textoPuntos.SetText("x" + puntuacion);
             manager.ReproducirSonido(sonidoMoneda);
             Destroy(other.gameObject);
         }
@@ -81,16 +87,19 @@ public class Protagonista : MonoBehaviour
 
         if(other.gameObject.CompareTag("Respawn"))
         {
+            //SceneManager.LoadScene(1);
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
+            //Destroy(gameObject);
             rb =gameObject.GetComponent<Rigidbody>();
             if(rb != null )
             {
-                //Detener por el momento la bola
-                rb.velocity = Vector3.zero;
-                // Posicion inicial
-                rb.MovePosition(spawn);
-                rb.useGravity = true; //reactivar
+            //Detener por el momento la bola
+            rb.velocity = Vector3.zero;
+            //Posicion inicial
+            rb.MovePosition(spawn);
+            rb.useGravity = true; //reactivar
             }
-            
+
         }
     }
 }

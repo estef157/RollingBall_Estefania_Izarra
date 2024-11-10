@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -12,8 +11,8 @@ public class Moneda : MonoBehaviour
     [SerializeField] float velocidadmov;
     float timer = 0;
     [SerializeField] int velocidadRot;
-    private int puntuacion;
-    [SerializeField] TMP_Text textoPuntos;
+    //private int puntuacion;
+    //[SerializeField] TMP_Text textoPuntos;
     [SerializeField] Vector3 direccionRot;
  
     // Start is called before the first frame update
@@ -37,7 +36,7 @@ public class Moneda : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        puntuacion += 1;
-        textoPuntos.SetText("x" + puntuacion);
+        //puntuacion += 1;
+      //  textoPuntos.SetText("x" + puntuacion);
     }
 }
