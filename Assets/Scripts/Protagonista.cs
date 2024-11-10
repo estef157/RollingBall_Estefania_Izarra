@@ -9,7 +9,7 @@ public class Protagonista : MonoBehaviour
     [SerializeField] AudioClip sonidoMoneda;
     [SerializeField] Vector3 spawn;
     [SerializeField] AudioManager manager;
-    static public int fuerzaMov = 4;
+    static public int fuerzaMov = 3;
     [SerializeField] int fuerzaSalto;
     [SerializeField] float distanciaDeteccionSuelo;
     [SerializeField] LayerMask queEsSuelo;
