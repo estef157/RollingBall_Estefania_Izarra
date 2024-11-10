@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Protagonista : MonoBehaviour
 {
-
+    public static bool Time0ut = false;
     [SerializeField] AudioClip sonidoMoneda;
     [SerializeField] AudioManager manager;
     static public int fuerzaMov = 4;
@@ -28,6 +29,12 @@ public class Protagonista : MonoBehaviour
         v = Input.GetAxisRaw("Vertical");
         Vector3 direccion  = new Vector3 (h,0,v).normalized;
         Saltar();
+
+        if( Time0ut )
+        {
+            Time0ut = false;
+            SceneManager.LoadScene(2);
+        }
     }
 
     private void FixedUpdate()
