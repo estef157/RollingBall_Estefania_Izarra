@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Protagonista : MonoBehaviour
 {
+    
     public static bool Time0ut = false;
     [SerializeField] AudioClip sonidoMoneda;
     [SerializeField] Vector3 spawn;
@@ -87,6 +88,7 @@ public class Protagonista : MonoBehaviour
 
         if(other.gameObject.CompareTag("Respawn"))
         {
+            fuerzaMov = 2;
             //SceneManager.LoadScene(1);
             //rb.constraints = RigidbodyConstraints.FreezeAll;
             //Destroy(gameObject);
